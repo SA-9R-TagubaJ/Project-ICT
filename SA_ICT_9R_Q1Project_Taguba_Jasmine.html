@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q1 Project</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Dancing+Script:wght@500;600;700&family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Dancing Script', cursive;
+        }
+
+        body {
+            background-color: #ffffff;
+            color: #3a2430;
+        }
+
+        /* HERO */
+        .hero {
+            background: linear-gradient(135deg, #f4f2c8, #87c6ed);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 45px 60px;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .hero-text {
+            color: #ffffff;
+        }
+
+        .hero-text h1 {
+            font-family: 'Baloo 2', sans-serif;
+            font-weight: 800;
+            font-size: 34px;
+            margin-bottom: 6px;
+        }
+
+        .hero-text .tagline,
+        .hero-text .intro {
+            font-family: 'Quicksand', sans-serif;
+        }
+
+        .hero-text .tagline {
+            font-size: 15px;
+            font-weight: 500;
+            color: #e15692;
+            margin-bottom: 14px;
+        }
+
+        .hero-text .intro {
+            font-size: 15px;
+            margin-bottom: 16px;
+            color: #a35899;
+        }
+
+        .navlinks {
+            list-style: none;
+            display: flex;
+            gap: 22px;
+        }
+
+        .navlinks li a {
+            font-family: 'Quicksand', sans-serif;
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .navlinks li a:hover {
+            color: #ffd6e5;
+        }
+
+        .pfp {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 4px solid #ffffff;
+            object-fit: cover;
+            background-color: #f6e9d8;
+            flex-shrink: 0;
+        }
+
+        /* ABOUT ME */
+        #about {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 45px 30px 30px;
+        }
+
+        .section-pill {
+            display: inline-block;
+            background: linear-gradient(to right, #f091bb, #d48bac);
+            color: #ffffff;
+            font-family: 'Baloo 2', sans-serif;
+            font-weight: 700;
+            font-size: 20px;
+            padding: 10px 26px;
+            border-radius: 8px;
+            margin-bottom: 22px;
+        }
+
+        #about p.bio {
+            color: #55404a;
+            line-height: 1.7;
+            font-size: 19px;
+            margin-bottom: 26px;
+        }
+
+        #about h2 {
+            font-family: 'Baloo 2', sans-serif;
+            font-weight: 700;
+            font-size: 19px;
+            color: #2e1e26;
+            margin-bottom: 10px;
+        }
+
+        .plain-list {
+            list-style: disc;
+            margin-left: 20px;
+            margin-bottom: 28px;
+            color: #55404a;
+            font-size: 18px;
+        }
+
+        .plain-list li {
+            padding: 3px 0;
+        }
+
+        .quick-facts .fact {
+            margin-bottom: 14px;
+        }
+
+        .quick-facts h3 {
+            font-family: 'Baloo 2', sans-serif;
+            font-weight: 700;
+            font-size: 15px;
+            color: #2e1e26;
+            margin-bottom: 2px;
+        }
+
+        .quick-facts p {
+            color: #55404a;
+            font-size: 18px;
+        }
+
+        /* MY WORKS */
+        #works {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px 30px 45px;
+        }
+
+        .works-gallery {
+            display: flex;
+            flex-direction: column;
+            gap: 35px;
+            margin-top: 10px;
+            align-items: center;
+        }
+
+        .work-item {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 25px;
+            max-width: 700px;
+            width: 100%;
+        }
+
+        .work-item img {
+            border-radius: 8px;
+            border: 2px dashed #d6558f;
+            width: 320px;
+            height: 220px;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .work-item ul {
+            list-style: none;
+            text-align: left;
+            flex: 1;
+        }
+
+        .work-item ul li {
+            padding: 4px 0;
+            color: #55404a;
+            font-size: 17px;
+        }
+
+        .work-item ul li a {
+            color: #d6558f;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        /* CONTACT */
+        #contact {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px 30px 50px;
+        }
+
+        .form-container {
+            background-color: #f09cbd;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        #contact label {
+            display: block;
+            margin-top: 15px;
+            margin-bottom: 5px;
+            font-weight: 600;
+            color: #7a2e4d;
+            font-size: 17px;
+        }
+
+        #contact input[type="text"],
+        #contact input[type="email"],
+        #contact select,
+        #contact textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #7aebff;
+            border-radius: 6px;
+            font-size: 15px;
+            font-family: 'Quicksand', sans-serif;
+        }
+
+        .radio-group,
+        .checkbox-group {
+            display: flex;
+            gap: 18px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .radio-group label,
+        .checkbox-group label {
+            display: inline;
+            font-weight: normal;
+            margin: 0;
+            font-size: 16px;
+        }
+
+        #contact button {
+            display: block;
+            width: 100%;
+            margin-top: 20px;
+            padding: 12px;
+            background-color: #d6558f;
+            color: #ffffff;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            font-family: 'Baloo 2', sans-serif;
+        }
+
+        #contact button:hover {
+            background-color: #b8406f;
+        }
+
+        footer {
+            background-color: #7aebff;
+            color: #ffffff;
+            text-align: center;
+            padding: 15px;
+            font-size: 15px;
+        }
+ </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Hey, I'm Jasmine!</h1>
+            <p class="tagline">I believe in unicorns</p>
+            <p class="intro">Hi, I'm Jasmine — welcome to my portfolio!</p>
+            <ul class="navlinks">
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#works">My Works</a></li>
+                <li><a href="#contact">Contact Me</a></li>
+            </ul>
+        </div>
+        <img src="https://i.pinimg.com/736x/03/5c/2e/035c2ef4ca4b37c356cd8a8060c9758a.jpg" alt="profile picture" class="pfp">
+    </section>
+
+    <section id="about">
+        <span class="section-pill">About Me</span>
+        <p class="bio">I enjoy experimenting and experiencing new things. I believe that being positive is the key to living a whimsical life.</p>
+
+        <h2>My Interests</h2>
+        <ul class="plain-list">
+            <li> Matcha & Hojicha 🍵</li>
+               <li>Art 🎨</li>
+               <li>Makeup & Shopping 🛍️</li>
+
+        </ul>
+
+<h2>Quick Facts</h2>
+<div class="quick-facts">
+    <div class="fact">
+        <h3>Name</h3>
+        <p>Jasmine Taguba</p>
+    </div>
+    <div class="fact">
+        <h3>Grade & Section</h3>
+        <p>Grade 9–RUBY</p>
+    </div>
+    <div class="fact">
+        <h3>Favorite Color</h3>
+        <p>Light Pink & Sky Blue</p>
+    </div>
+    
+    <div class="fact">
+        <h3>Dream Career</h3>
+        <p>Speech-Language Pathologist</p>
+    </div>
+    <div class="fact">
+        <h3>Personal Motto</h3>
+        <p>"A smile brings luck!"</p>
+    </div>
+    
+
+</div>
+
+    <section id="works">
+        <span class="section-pill">My Works</span>
+        <div class="works-gallery">
+
+            <div class="work-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6PcNGGDZ7xGxvYf7q-cQWAfCIUqjYylpDBqkWN8faZroRubIb3aXZYaLr&s=10"
+            "work-item">
+                <ul>
+                    <li>How many matchas can I drink in a day?☕</li>
+                    <li><a href="">View</a></li>
+                </ul>
+            </div>
+
+            <div class="work-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTG1fARsdDQX5HRPX0F413DNY11iZamdslwTGA8Qcm3VdMNY_LKh9ZI7hbO&s=10">
+                <ul>
+                    <li>Yeo Kaa is the best artist</li>
+                    <li><a href="">View</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="contact">
+        <span class="section-pill">Contact Me</span>
+        <div class="form-container">
+            <form>
+                <label for="name">Your name:</label>
+                <input type="text" id="name" name="name" placeholder="Type here" required>
+
+                <label for="email">Your Email:</label>
+                <input type="email" id="email" name="email" placeholder="Type here" required>
+
+                <label>How did you find me?</label>
+                <div class="radio-group">
+                    <input type="radio" id="rate1" name="rating" value="1" required>
+                    <label for="rate1">Instagram</label>
+
+                    <input type="radio" id="rate2" name="rating" value="2" required>
+                    <label for="rate2">Tiktok</label>
+
+                    <input type="radio" id="rate3" name="rating" value="3" required>
+                    <label for="rate3">Pinterest</label>
+                </div>
+
+                <label>Interested in:</label>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="action" name="selection" value="Action">
+                    <label for="action">Matcha</label>
+
+                    <input type="checkbox" id="Comedy" name="selection" value="Comedy">
+                    <label for="Comedy">Art</label>
+
+                    <input type="checkbox" id="Drama" name="selection" value="Drama">
+                    <label for="Drama">Make up</label>
+                </div>
+
+                <label for="platform">Rate My Portfolio</label>
+                <select id="platform" name="platform" required>
+                    <option value="">Select Rating</option>
+                   <option value="1">🍙</option>
+                    <option value="2">🍙🍙</option>
+                    <option value="3">🍙🍙🍙</option>
+                    <option value="4">🍙🍙🍙🍙</option>
+                    <option value="5">🍙🍙🍙🍙🍙</option>
+                </select>
+
+                <label for="feedback">Any Feedback?</label>
+                <textarea id="feedback" name="feedback" rows="4" placeholder="feedback here..." required></textarea>
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 Jasmine Taguba. All rights reserved.</p>
+    </footer>
+</body>
+</html>
